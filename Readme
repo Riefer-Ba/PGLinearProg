@@ -1,0 +1,43 @@
+Ausführung von tsp_tester.py
+
+Es wird nacheinander abfragt: dir von TSP Instanzen, Heuristik, Cutting plane, 2-opt Anzahl.
+Zu bemerken, alles können mengen sein, das Programm führt dann jede Kombination aus.
+Das Programm kann vorzeitig mit ^Z abgebrochen werden.
+Falls es keine dir output gibt wird eine erstellt,
+dort werden output<int>.dat abgespeichert.
+
+Es wird für jeden durchlauf folgendes abgespeichert(in einer Zeile):
+1. die stelle der TSP Instanz in der gegebenen dir
+2. die Anzahl der Ausführung vom Algorithmus mit dieser Instanz
+3. die Dauer der Ausführung des Algorithmus
+4. die Anzahl der BB Knoten
+5. welche Heuristik benutzt wurde.
+
+alles steht in einer Zeile also:
+1. 2. 3. 4. 5.
+
+
+
+
+Beispiel einer Ausführung:
+
+(base) gutjahr@coan-02:~/py_wo/code$ python tsp_tester.py
+Bitte geben sie das Directory der zu untersuchenden TSP ein:
+examples
+Bitte geben sie die zu nutzenden Heuristiken ein, getrennt mit einem Komma[None,NN,NNDS,MST]
+NNDS
+Bitte geben sie die zu nutzenden Cutting Planes ein, getrennt mit einem Komma[frac,int]
+frac
+Bitte geben sie die zu nutzenden 2opt Iterationen, getrennt mit einem Komma, ein.
+0,10,20,30
+Academic license - for non-commercial use only - expires 2021-07-18
+Using license file /home/stud/gutjahr/opt/gurobi.lic
+......<gurobi rehcnet hier weiter>........
+
+Beispiel einer Ausgabe in output<int>.dat:
+(base) gutjahr@coan-02:~/py_wo/code$ nano ./output/output.dat
+TSP-Instanz    Algo    Laufzeit    Knotenzahl    Heuristik
+1    1    2.052877902984619    20.0    NN
+1    2    0.10721802711486816    1.0    NN
+1    3    0.11106109619140625    1.0    NN
+..............................................
